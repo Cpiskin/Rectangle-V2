@@ -1,64 +1,54 @@
 # Doing the rectangle class again with the informations we learned from Unit 1 and Unit 2
 
 public class RectangleV2 {
+    // Fields (Instance Variables)
+    private int length;  // Uzunluk
+    private int width;   // Genişlik
 
-    // Attributes
-    private double length;
-    private double width;
-    private double angle;
-    private int sides;
-    private String name;
-
-    // Constructors
-    public RectangleV2() {
-        this.name = "RectangleV2";
-    }
-
-    public RectangleV2(double length, double width) {
+    // Constructor (Kurucu Metod)
+    public RectangleV2(int length, int width) {
         this.length = length;
         this.width = width;
-        this.name = "RectangleV2";
     }
 
-    // Getters
-    public double getLength() {
+    // Getter ve Setter Metodları
+    public int getLength() {
         return length;
     }
 
-    public double getWidth() {
-        return width;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    // Setters
-    public void setLength(double length) {
+    public void setLength(int length) {
         this.length = length;
     }
 
-    public void setWidth(double width) {
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
         this.width = width;
     }
 
-    // Other Methods
-
-    @Override
-    public String toString() {
-        return "RectangleV2 [length=" + length + ", width=" + width + ", angle=" + angle + ", sides=" + sides + ", name="
-                + name + "]";
-    }
-
-    public boolean equals(RectangleV2 otherRectangle) {
-        return this.length == otherRectangle.length && this.width == otherRectangle.width;
-    }
-
-    public double getArea() {
+    // Alan Hesaplama Metodu
+    public int calculateArea() {
         return length * width;
     }
 
-    public double getPerimeter() {
+    // Çevre Hesaplama Metodu
+    public int calculatePerimeter() {
         return 2 * (length + width);
     }
+
+    // Kare Kontrolü Metodu
+    public boolean isSquare() {
+        return length == width;
+    }
+
+    // Dikdörtgen Bilgilerini Yazdırma Metodu
+    public void printInfo() {
+        System.out.println("Uzunluk: " + length);
+        System.out.println("Genişlik: " + width);
+        System.out.println("Alan: " + calculateArea());
+        System.out.println("Çevre: " + calculatePerimeter());
+    }
 }
+
